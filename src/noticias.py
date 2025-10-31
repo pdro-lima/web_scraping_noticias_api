@@ -9,10 +9,9 @@ from dotenv import load_dotenv
 # %%
 
 load_dotenv()
-chave_api = os.getenv("chave_api_noticias")
 
 headers = {
-    'Authorization': chave_api
+    'Authorization': os.getenv("NEWS_API_KEY")
 }
 
 # %%
@@ -90,9 +89,8 @@ from google.genai.client import Client
 # %%
 
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
 
-client = Client(api_key=api_key)
+client = Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 texto = ""
 
