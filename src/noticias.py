@@ -2,7 +2,6 @@
 import os
 import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 import datetime
 from dotenv import load_dotenv
 
@@ -119,7 +118,6 @@ nome_arquivo = f"resumo_{data_hoje}.txt"
 
 diretorio = os.path.join(*os.getcwd().split("\\")[:-1], "data", nome_arquivo)
 diretorio = diretorio.replace('c:', 'C:\\')
-#caminho = os.path.join(diretorio, nome_arquivo)
 
 with open(diretorio, "w", encoding="utf-8") as f:
     f.write(resumo_final)
