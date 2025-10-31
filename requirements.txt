@@ -1,0 +1,11 @@
+# Bibliotecas principais
+requests==2.32.3
+pandas==2.2.3
+beautifulsoup4==4.12.3
+python-dotenv==1.0.1
+google-genai==1.2.0
+
+# Dependências auxiliares
+# (inclusas automaticamente com pandas e BeautifulSoup)
+lxml==5.3.0
+html5lib==1.1
