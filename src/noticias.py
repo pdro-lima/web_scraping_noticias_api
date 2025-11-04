@@ -13,7 +13,6 @@ headers = {
     'Authorization': os.getenv("NEWS_API_KEY")
 }
 
-# %%
 def coleta_portais_categoria(categoria):
     
     url_base_portais = 'https://newsapi.org/v2/top-headlines/sources?'
@@ -39,11 +38,11 @@ dict_categorias = {
     'tecnologia': 'technology'
 }
 
-categoria_pt = input('Categorias: esportes, negócios, entretenimento, geral, saúde, ciência ou tecnologia\nEscolha sua categoria: ')
+categoria_pt = input('*CATEGORIAS*: esportes, negócios, entretenimento, geral, saúde, ciência ou tecnologia\nEscolha sua categoria: ')
 
-categoria_us = dict_categorias[categoria_pt]
+categoria_en = dict_categorias[categoria_pt]
 
-resposta = coleta_portais_categoria(categoria_us)
+resposta = coleta_portais_categoria(categoria_en)
 
 portais = pd.DataFrame(resposta['sources'])
 
@@ -98,7 +97,7 @@ for i in range(0, len(lista_descricao_artigos)):
 
 # %%
 
-prompt = f"""Considerando que o tema base das notícias é: {categoria_pt}, interprete a descrição dos artigos a seguir e gere um resumo objetivo em pt-BR abrangendo todos os tópicos.
+prompt = f"""Considerando que o tema base das notícias é: {categoria_pt}, interprete a descrição dos artigos presentes no texto a seguir e gere um resumo objetivo em pt-BR abrangendo todos os tópicos.
 Texto:
 {texto}"""
 
